@@ -7,7 +7,11 @@ class VersionTask extends \Phalcon\Cli\Task
     {
         $config = $this->getDI()->get('config');
 
-        echo $config['version'];
+        while (true) {
+            echo $config['version'];
+            sleep(1);
+
+        }
     }
 
 }
