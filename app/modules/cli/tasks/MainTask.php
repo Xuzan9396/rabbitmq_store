@@ -98,7 +98,7 @@ class MainTask extends \Phalcon\Cli\Task
         $connection->close();
     }
 
-    public function test4Action(  )
+    public function consumeAction(  )
     {
         $conf = [
             'host' => '127.0.0.1',
@@ -121,13 +121,13 @@ class MainTask extends \Phalcon\Cli\Task
         $channel->queue_declare($queueName, false, true, false, false); //声明初始化一条队列
         $channel->queue_bind($queueName, $exchangeName, $routingKey); //将队列与某个交换机进行绑定，并使用路由关键字
 
-//        for ($i=1;$i<=100000;$i++) {
+        for ($i=1;$i<=100000;$i++) {
             $msgBody = json_encode(["n、ame" => "iGoo", "age" => $i]);
 
             var_export($msgBody, true);
             $msg = new AMQPMessage($msgBody, ['content_type' => 'text/plain', 'delivery_mode' => 2]); //生成消息
             $r = $channel->basic_publish($msg, $exchangeName, $routingKey); //推送消息到某个交换机
-//        }
+        }
 //        var_export($msgBody, true);
 //        $msg = new AMQPMessage($msgBody, ['content_type' => 'text/plain', 'delivery_mode' => 2]); //生成消息
 //        $r = $channel->basic_publish($msg, $exchangeName, $routingKey); //推送消息到某个交换机
@@ -136,7 +136,7 @@ class MainTask extends \Phalcon\Cli\Task
 
     }
 
-    public function test5Action(  )
+    public function productAction(  )
     {
         $exchangeName = 'kd_sms_send_ex'; //交换机名
         $queueName = 'kd_sms_send_q'; //队列名称
