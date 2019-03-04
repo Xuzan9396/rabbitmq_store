@@ -9,7 +9,7 @@ class VersionTask extends \Phalcon\Cli\Task
 
         while (true) {
             echo $config['version'];
-            sleep(1);
+            sleep(60);
 
         }
     }

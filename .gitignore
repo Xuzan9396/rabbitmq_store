@@ -1,0 +1,13 @@
+vendor/*
+app/config/config.php
+cache/*
+public/upload/*
+head_img.py
+modify.log
+.phalcon/*
+.idea/*
+app/common/library/pem/*
+appendonly.aof
+dump.rdb
+
+
