@@ -112,7 +112,7 @@ class MainTask extends \Phalcon\Cli\Task
             'host' => '192.168.0.78',
             'port' => 5672,
             'user' => 'root',
-            'pwd' => 'mq@0304',
+            'pwd' => 'Mq@0304',
             'vhost' => '/',
         ];
         $exchangeName = 'kd_sms_send_ex'; //交换机名
