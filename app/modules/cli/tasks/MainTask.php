@@ -100,12 +100,20 @@ class MainTask extends \Phalcon\Cli\Task
 
     public function consumeAction(  )
     {
+//        $conf = [
+//            'host' => '127.0.0.1',
+//            'port' => 5672,
+//            'user' => 'xuzan',
+//            'pwd' => 'xuzan',
+//            'vhost' => 'x',
+//        ];
+
         $conf = [
-            'host' => '127.0.0.1',
+            'host' => '192.168.0.78',
             'port' => 5672,
-            'user' => 'xuzan',
-            'pwd' => 'xuzan',
-            'vhost' => 'x',
+            'user' => 'root',
+            'pwd' => 'mq!123456',
+            'vhost' => '/',
         ];
         $exchangeName = 'kd_sms_send_ex'; //交换机名
         $queueName = 'kd_sms_send_q'; //队列名称
