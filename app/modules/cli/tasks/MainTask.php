@@ -149,7 +149,7 @@ class MainTask extends \Phalcon\Cli\Task
         $exchangeName = 'kd_sms_send_ex'; //交换机名
         $queueName = 'kd_sms_send_q'; //队列名称
         $routingKey = 'sms_send'; //路由关键字(也可以省略)
-        $connection = new AMQPStreamConnection('127.0.0.1', 5672, 'xuzan', 'xuzan','x');
+        $connection = new AMQPStreamConnection('192.168.0.78', 5672, 'root', 'Mq@0304','/');
         $channel = $connection->channel();
         $channel->exchange_declare($exchangeName, 'direct', false, true, false); //声明初始化交换机
         $channel->queue_declare($queueName, false, true, false, false); //声明初始化一条队列
